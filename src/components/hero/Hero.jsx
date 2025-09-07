@@ -1,9 +1,68 @@
+import { stagger } from "framer-motion";
+import { motion } from "framer-motion";
 import "./Hero.scss";
+
+const textVariants = {
+    initial: {
+        x: -500,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, staggerChildren: 0.1},
+    },
+    scrollButton: {
+        opacity: 0,
+        y: 10,
+        transition: {
+            duration: 2,
+            repeat: Infinity
+        }
+    },
+};
+
+const SliderVariants = {
+    initial: {
+        x: 0,
+    },
+    animate: {
+        x: "-220%",
+        transition: {
+            repeat: Infinity, 
+            repeatType: "mirror",
+            duration: 20,
+            },
+    },
+};
 
 const Hero = () => {
     return (
-        <div className="hero">Hero</div>
-            )
+        <div className="hero">
+            <div className="wrapper">
+            <motion.div className="textContainer" variants={textVariants} initial="initial" animate="animate">
+                <motion.h2 variants={textVariants}>YOUNESS HAMDAOUI</motion.h2>
+                  <motion.h1 variants={textVariants}>Information System Consultant and Software Engineer</motion.h1>
+            <motion.div className="buttons">
+                <motion.button variants={textVariants}>See the latest works</motion.button>
+                <motion.button variants={textVariants}>Contact Me</motion.button>
+            </motion.div>
+            <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" />
+            </motion.div>
+            </div>
+            <motion.div className="slidingTextContainer" variants={SliderVariants} initial="initial" animate="animate">
+                Software Engineering
+                </motion.div>
+            <div className="imageContainer">
+                <img src="/hero.png" alt="hero" style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                }} />
+            </div>
+        </div>
+        )
 };
 
 export default Hero;
