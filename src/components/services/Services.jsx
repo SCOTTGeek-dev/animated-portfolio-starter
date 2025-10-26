@@ -30,12 +30,11 @@ const Services = () => {
         className="services" 
         variants={variants} 
         initial="initial" 
-        //animate="animate"
-        //whileInView={"animate"}
         ref={ref} 
         animate={isInView && "animate"}
+        style={{ paddingTop: 0, marginTop: 0 }}
         >
-         <motion.div className="textContainer" variants={variants}>
+         <motion.div className="textContainer" variants={variants} style={{ paddingTop: 0, marginTop: 0 }}>
             <p>
                 I focus on developing modern cloud solutions that are scalable, secure, and efficient
                 <br /> having experience in various technologies and frameworks
@@ -46,42 +45,42 @@ const Services = () => {
         <div className="title">
             <img src="/people.webp" alt="" />
             <h1>
-                <motion.b whileHover={{ color: "orange" }}>Unique </motion.b>
-                Ideas
+                <motion.b whileHover={{ color: "orange" }}>Innovative </motion.b>
+                Solutions
                 </h1>
         </div>
          <div className="title">
             <h1>
                 <motion.b whileHover={{ color: "orange" }}>For Your </motion.b>
-                SaaS !
+                Business !
             </h1>
             <button>WHAT I DO?</button>
         </div>
         </motion.div>
         <motion.div className="listContainer" variants={variants}>
         <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-            <h2>Branding</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Nihil corrupti fugiat unde! Mollitia cupiditate vel deleniti
-            ut nam adipisci est id reprehenderit nostrum voluptatum aperiam qui repellat, porro rerum unde?
+            <h2>Cloud Architecture</h2>
+            <p>Design and implement scalable cloud infrastructures using Azure, GCP, and AWS. 
+            Expertise in microservices architecture, containerization with Docker and Kubernetes, 
+            and serverless computing for optimal performance and cost efficiency.
             </p>
-            <button>Go</button>
+            <button>Learn More</button>
         </motion.div>
         <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-            <h2>Branding</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Nihil corrupti fugiat unde! Mollitia cupiditate vel deleniti
-            ut nam adipisci est id reprehenderit nostrum voluptatum aperiam qui repellat, porro rerum unde?
+            <h2>Full-Stack Development</h2>
+            <p>Build robust web applications using Spring Boot for backend development and 
+            Angular/React for frontend. Proficient in Java enterprise applications, 
+            RESTful APIs, database design, and modern JavaScript frameworks.
             </p>
-            <button>Go</button>
+            <button>View Projects</button>
         </motion.div>
         <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-            <h2>Branding</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Nihil corrupti fugiat unde! Mollitia cupiditate vel deleniti
-            ut nam adipisci est id reprehenderit nostrum voluptatum aperiam qui repellat, porro rerum unde?
+            <h2>DevOps & CI/CD</h2>
+            <p>Implement automated deployment pipelines, infrastructure as code, 
+            monitoring and logging solutions. Experience with Jenkins, Azure DevOps, 
+            Terraform, and container orchestration for seamless development workflows.
             </p>
-            <button>Go</button>
+            <button>Explore</button>
         </motion.div>
         </motion.div>
     </motion.div>

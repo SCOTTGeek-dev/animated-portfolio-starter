@@ -24,6 +24,51 @@ height: 100vh;
 scroll-snap-align: center;
 }
 
+/* Spécifique au portfolio uniquement */
+.portfolio section {
+    scroll-snap-align: start;
+    height: 100vh;
+    padding-top: 70px; /* Réduit de 100px à 70px pour libérer 30px (~1cm) */
+}
+
+/* Services - reset explicite */
+.services {
+    scroll-snap-align: center;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+    padding-top: 0 !important; /* Force le reset */
+}
+
+/* Section spécifique pour le contenu services */
+#ServicesContent {
+    height: 100vh;
+    scroll-snap-align: center;
+    padding-top: 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+/* Section parallax */
+#Services, #Portfolio {
+    height: 100vh;
+    scroll-snap-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Reset complet - seules les sections DANS portfolio ont du padding-top */
+section {
+    height: 100vh;
+    scroll-snap-align: center;
+    padding-top: 0; /* Reset par défaut */
+}
+
+/* Reset des styles portfolio dans les autres sections */
+section:not(.portfolio section) {
+   padding-top: 0 !important;
+}
+
 .course{
     height: 100vh;
     display: flex;

@@ -1,15 +1,18 @@
 .parallax{
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Force la hauteur exacte */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: 1; /* En arrière-plan */
 }
 
 h1{
     font-size: 100px;
+    z-index: 4; /* Au-dessus des autres éléments */
+    position: relative;
 }
 
 .mountains{

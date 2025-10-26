@@ -1,88 +1,163 @@
 .services{
     background: linear-gradient(180deg, #0c0c1d, #111132);
-    height: 100%;
+    height: 100vh !important; /* Force la hauteur */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 3; /* Au-dessus des parallax */
+    isolation: isolate; /* Crée un nouveau contexte de superposition */
+    overflow: visible; /* Permet l'affichage complet */
+    padding: 0; /* Supprime complètement le padding */
 
-
-.textContainer{
-    flex:1;
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    p{
-        font-weight: 200;
-        font-size: 20px;
-        color: gray;
-        text-align: right;
-    }
-
-    hr{
-        width: 500px;
-        border: none;
-        border-top:0.5px solid gray;
-    }
-}
-
-.titleContainer{
-    flex:2; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-
-    .title{
+    .textContainer{
+        flex: 0.5; /* Réduit drastiquement la flex-basis */
+        align-self: flex-end;
         display: flex;
-        gap: 50px;
+        align-items: center;
+        gap: 20px;
 
-
-        img{
-            width: 300px;
-            height: 100px;
-            border-radius: 50px;
-            object-fit: cover;
+        p{
+            font-weight: 200;
+            font-size: 25px; /* Réduit la taille */
+            color: rgb(230, 204, 204);
+            text-align: right;
+            line-height: 1.3; /* Réduit l'interligne */
+            margin: 0; /* Supprime toutes les marges */
         }
 
-        h1{
-            font-size: 96px;
-            font-weight: 100;
-        }
-
-        button{
-            width: 300px;
-            height: 100px;
-            border-radius: 50px;
-            background-color: orange;
+        hr{
+            width: 500px;
             border: none;
-            font-size: 24px;
-            cursor: pointer;
+            border-top:0.5px solid gray;
         }
     }
-}
 
-.listContainer{
-    flex: 2; 
-    display: flex;
-    max-width: 1366px;
-    margin: auto;
-
-    .box{
-        padding: 50px;
-        border: 0.5px solid gray;
+    .titleContainer{
+        flex: 1.3; /* Réduit la flex-basis */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
 
-        button{
-            padding: 10px;
-            background-color: orange;
-            border: none;
-            cursor: pointer;
+        padding-top: 0; /* Supprime le padding-top */
+
+        .title{
+            display: flex;
+            gap: 30px; /* Réduit le gap */
+
+            img{
+                width: 220px; /* Réduit la taille */
+                height: 70px; /* Réduit la hauteur */
+                border-radius: 50px;
+                object-fit: cover;
+            }
+
+            h1{
+                font-size: 65px; /* Réduit encore plus */
+                font-weight: 100;
+                line-height: 1.1; /* Réduit l'interligne */
+                margin: 0; /* Supprime les marges */
+            }
+
+            button{
+                width: 220px; /* Réduit la taille */
+                height: 70px; /* Réduit la hauteur */
+                border-radius: 50px;
+                background-color: orange;
+                border: none;
+                font-size: 18px; /* Réduit la police */
+                cursor: pointer;
+            }
         }
     }
-}
+
+    .listContainer{
+        flex: 2.2; /* Réduit encore plus */
+        display: flex;
+        max-width: 1200px; /* Réduit la largeur maximale */
+        margin: auto;
+        width: 100%;
+        padding: 0 15px; /* Réduit le padding horizontal */
+
+        .box{
+            flex: 1;
+            padding: 15px; /* Réduit drastiquement le padding */
+            border: 0.5px solid gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px; /* Augmente la hauteur minimale */
+            max-height: 400px; /* Garde la hauteur maximale demandée */
+
+            h2 {
+                margin-bottom: 12px; /* Augmente légèrement la marge */
+                color: orange;
+                font-size: 35px; /* Augmente la taille du titre pour lisibilité */
+            }
+
+            p {
+                flex: 1;
+                margin-bottom: 12px;
+                font-size: 20px; /* Augmente la taille du texte pour lisibilité */
+                line-height: 1.4; /* Améliore l'interligne */
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 8; /* Augmente le nombre de lignes */
+                -webkit-box-orient: vertical;
+            }
+
+            button{
+                padding: 12px 24px; /* Augmente légèrement le padding du bouton */
+                background-color: orange;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 14px; /* Augmente la taille de police du bouton */
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #ff6b35;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .textContainer {
+            p { font-size: 16px; }
+            hr { width: 300px; }
+        }
+        
+        .titleContainer .title {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            
+            img, button {
+                width: 200px;
+                height: 80px;
+            }
+            
+            h1 { font-size: 48px; }
+        }
+        
+        .listContainer {
+            flex-direction: column;
+            max-width: 100%;
+            
+            .box {
+                padding: 15px; /* Augmente le padding pour mobile */
+                min-height: 150px;
+                max-height: 300px; /* Réduit légèrement pour mobile */
+                
+                h2 { font-size: 20px; } /* Augmente pour mobile */
+                p { 
+                    font-size: 15px; /* Augmente pour mobile */
+                    -webkit-line-clamp: 6;
+                }
+            }
+        }
+    }
 }
