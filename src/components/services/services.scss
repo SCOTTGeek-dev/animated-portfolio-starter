@@ -1,118 +1,127 @@
 .services{
     background: linear-gradient(180deg, #0c0c1d, #111132);
-    height: 100vh !important; /* Force la hauteur */
+    height: 100vh !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    z-index: 3; /* Au-dessus des parallax */
-    isolation: isolate; /* Crée un nouveau contexte de superposition */
-    overflow: visible; /* Permet l'affichage complet */
-    padding: 0; /* Supprime complètement le padding */
+    z-index: 3;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 0;
 
     .textContainer{
-        flex: 0.5; /* Réduit drastiquement la flex-basis */
+        flex: 0.35;
         align-self: flex-end;
         display: flex;
         align-items: center;
         gap: 20px;
+        padding-top: 10px;
 
         p{
             font-weight: 200;
-            font-size: 25px; /* Réduit la taille */
+            font-size: 20px;
             color: rgb(230, 204, 204);
             text-align: right;
-            line-height: 1.3; /* Réduit l'interligne */
-            margin: 0; /* Supprime toutes les marges */
+            line-height: 1.2;
+            margin: 0;
         }
 
         hr{
-            width: 500px;
+            width: 450px;
             border: none;
             border-top:0.5px solid gray;
         }
     }
 
     .titleContainer{
-        flex: 1.3; /* Réduit la flex-basis */
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        padding-top: 0; /* Supprime le padding-top */
+        justify-content: center;
+        padding-top: 0;
+        margin-top: -10px;
 
         .title{
             display: flex;
-            gap: 30px; /* Réduit le gap */
+            gap: 25px;
 
             img{
-                width: 220px; /* Réduit la taille */
-                height: 70px; /* Réduit la hauteur */
+                width: 200px;
+                height: 65px;
                 border-radius: 50px;
                 object-fit: cover;
             }
 
             h1{
-                font-size: 65px; /* Réduit encore plus */
+                font-size: 55px;
                 font-weight: 100;
-                line-height: 1.1; /* Réduit l'interligne */
-                margin: 0; /* Supprime les marges */
+                line-height: 1.05;
+                margin: 0;
             }
 
             button{
-                width: 220px; /* Réduit la taille */
-                height: 70px; /* Réduit la hauteur */
+                width: 200px;
+                height: 65px;
                 border-radius: 50px;
                 background-color: orange;
                 border: none;
-                font-size: 18px; /* Réduit la police */
+                font-size: 17px;
                 cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #ff6b35;
+                    transform: translateY(-2px);
+                }
             }
         }
     }
 
     .listContainer{
-        flex: 2.2; /* Réduit encore plus */
+        flex: 2.5;
         display: flex;
-        max-width: 1200px; /* Réduit la largeur maximale */
+        max-width: 1300px;
         margin: auto;
         width: 100%;
-        padding: 0 15px; /* Réduit le padding horizontal */
+        padding: 0 20px 20px 20px;
+        gap: 15px;
 
         .box{
             flex: 1;
-            padding: 15px; /* Réduit drastiquement le padding */
+            padding: 20px;
             border: 0.5px solid gray;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 180px; /* Augmente la hauteur minimale */
-            max-height: 400px; /* Garde la hauteur maximale demandée */
+            min-height: 200px;
+            max-height: 450px;
 
             h2 {
-                margin-bottom: 12px; /* Augmente légèrement la marge */
+                margin-bottom: 15px;
                 color: orange;
-                font-size: 35px; /* Augmente la taille du titre pour lisibilité */
+                font-size: 38px;
             }
 
             p {
                 flex: 1;
-                margin-bottom: 12px;
-                font-size: 20px; /* Augmente la taille du texte pour lisibilité */
-                line-height: 1.4; /* Améliore l'interligne */
+                margin-bottom: 15px;
+                font-size: 21px;
+                line-height: 1.5;
                 overflow: hidden;
                 display: -webkit-box;
-                -webkit-line-clamp: 8; /* Augmente le nombre de lignes */
+                -webkit-line-clamp: 9;
                 -webkit-box-orient: vertical;
             }
 
             button{
-                padding: 12px 24px; /* Augmente légèrement le padding du bouton */
+                padding: 14px 26px;
                 background-color: orange;
                 border: none;
                 cursor: pointer;
                 border-radius: 5px;
-                font-size: 14px; /* Augmente la taille de police du bouton */
+                font-size: 15px;
                 transition: all 0.3s ease;
 
                 &:hover {
