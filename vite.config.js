@@ -12,7 +12,8 @@ export default defineConfig({
       '639234b2897df993c73df95588f18000.serveo.net', // Ajoute le host Serveo
       '.serveo.net', // Permet tous les sous-domaines serveo.net
       '.ngrok.io', // Au cas où vous utiliseriez ngrok plus tard
-      '.tunnel.me' // Autres services de tunnel
+      '.tunnel.me',
+      'effective-experimental-merit-composite.trycloudflare.com' // Autres services de tunnel
     ]
   }
 })

@@ -40,34 +40,41 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding-top: 0;
-        margin-top: -10px;
+        padding: clamp(10px, 2vh, 20px) clamp(20px, 3vw, 40px);
+        margin-top: 0;
+        gap: clamp(15px, 2vh, 25px);
 
         .title{
             display: flex;
-            gap: 25px;
+            gap: clamp(15px, 2.5vw, 25px);
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
 
             img{
-                width: 200px;
-                height: 65px;
+                width: clamp(150px, 15vw, 200px);
+                height: clamp(50px, 6vh, 65px);
                 border-radius: 50px;
                 object-fit: cover;
             }
 
             h1{
-                font-size: 55px;
+                font-size: clamp(32px, 4.5vw, 55px);
                 font-weight: 100;
-                line-height: 1.05;
+                line-height: 1.2;
                 margin: 0;
+                text-align: center;
             }
 
             button{
-                width: 200px;
-                height: 65px;
+                width: clamp(150px, 15vw, 200px);
+                height: clamp(50px, 6vh, 65px);
                 border-radius: 50px;
                 background-color: orange;
                 border: none;
-                font-size: 17px;
+                font-size: clamp(14px, 1.5vw, 17px);
                 cursor: pointer;
                 transition: all 0.3s ease;
 
@@ -82,11 +89,12 @@
     .listContainer{
         flex: 2.5;
         display: flex;
-        max-width: 1300px;
+        max-width: clamp(900px, 90vw, 1300px);
         margin: auto;
         width: 100%;
-        padding: 0 20px 20px 20px;
-        gap: 15px;
+        padding: 0 clamp(15px, 2vw, 20px) clamp(15px, 2vh, 20px);
+        gap: clamp(10px, 1.5vw, 15px);
+        align-items: stretch;
 
         .box{
             flex: 1;

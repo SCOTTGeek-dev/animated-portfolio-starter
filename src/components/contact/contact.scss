@@ -15,7 +15,9 @@
 
         h1{
             font-size: clamp(60px, 8vw, 100px);
-            line-height: clamp(55px, 7vw, 88px);
+            line-height: clamp(70px, 9vw, 115px);
+            overflow: visible;
+            padding-bottom: 10px;
         }
 
         .item {

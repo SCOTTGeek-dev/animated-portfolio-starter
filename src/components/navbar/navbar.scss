@@ -126,6 +126,16 @@ img{
         .flag {
             font-size: 20px;
             line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            svg {
+                width: 24px;
+                height: 18px;
+                border-radius: 2px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
         }
 
         .languageCode {
@@ -178,6 +188,16 @@ img{
             .flag {
                 font-size: 24px;
                 line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                svg {
+                    width: 32px;
+                    height: 24px;
+                    border-radius: 3px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                }
             }
 
             .languageName {
@@ -262,31 +282,28 @@ img{
 
     .languageSelector {
         .languageButton {
-            padding: 5px 8px;
+            padding: clamp(4px, 1vw, 8px) clamp(8px, 1.5vw, 12px);
+            gap: clamp(4px, 1vw, 6px);
 
             .flag {
-                font-size: 16px;
+                font-size: clamp(16px, 2.5vw, 20px);
             }
 
             .languageCode {
-                display: none;
-            }
-
-            .arrow {
-                width: 10px;
-                height: 10px;
+                font-size: clamp(11px, 1.5vw, 14px);
             }
         }
 
         .languageMenu {
-            min-width: 160px;
+            min-width: clamp(160px, 20vw, 180px);
 
             .languageOption {
-                padding: 10px 12px;
-                font-size: 13px;
+                padding: clamp(10px, 1.5vh, 12px) clamp(12px, 2vw, 16px);
+                font-size: clamp(12px, 1.5vw, 14px);
+                gap: clamp(8px, 1.5vw, 12px);
 
                 .flag {
-                    font-size: 20px;
+                    font-size: clamp(20px, 3vw, 24px);
                 }
             }
         }
