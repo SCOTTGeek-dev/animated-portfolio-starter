@@ -6,9 +6,11 @@ import Services from "./components/services/Services.jsx";
 import Portfolio from "./components/portfolio/Portfolio.jsx";
 import Contact from "./components/contact/Contact.jsx";
 import Stars from "./components/stars/Stars.jsx";
+import Cursor from "./components/cursor/Cursor.jsx";
 
 const App = () => {
   return<div>
+    <Cursor />
     <Stars />
     <section id="Homepage">
     <Navbar />

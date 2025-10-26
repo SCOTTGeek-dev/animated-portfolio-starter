@@ -120,10 +120,17 @@
                   border-radius: 50%;
                   opacity: 0;
                   transition: opacity 0.3s ease;
+                  animation: rotateBorder 3s linear infinite;
+               }
+
+               @keyframes rotateBorder {
+                  0% { transform: rotate(0deg); }
+                  100% { transform: rotate(360deg); }
                }
                
                &:hover::before {
                   opacity: 1;
+                  background: linear-gradient(45deg, orange, rgba(255, 165, 0, 0.3), #ff6b35, transparent);
                }
 
                img{
@@ -134,7 +141,7 @@
                   object-fit: contain;
                   display: block;
                   filter: drop-shadow(0 8px 16px rgba(255, 165, 0, 0.3));
-                  transition: filter 0.3s ease;
+                  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                   
                   /* Assure le centrage parfait */
                   margin: auto;
@@ -149,12 +156,11 @@
                &:hover img {
                   filter: drop-shadow(0 12px 24px rgba(255, 165, 0, 0.5)) 
                           drop-shadow(0 0 20px rgba(255, 165, 0, 0.3));
-                  transform: scaleX(-1); /* Inverse tous les logos au hover */
-                  transition: transform 0.6s ease, filter 0.3s ease;
+                  transform: scaleX(-1) scale(1.15) rotate(10deg); /* Inverse tous les logos au hover */
                   
                   /* Spring Boot revient à la normale au hover (double inversion) */
                   &[alt="Spring Boot"] {
-                     transform: scaleX(1); /* Remet Spring Boot à l'endroit au hover */
+                     transform: scaleX(1) scale(1.15) rotate(10deg); /* Remet Spring Boot à l'endroit au hover */
                   }
                }
             }

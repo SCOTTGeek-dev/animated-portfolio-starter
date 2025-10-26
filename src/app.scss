@@ -34,6 +34,33 @@ body{
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    position: relative;
+
+    /* Effet de grain/texture */
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(155, 89, 182, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 40% 20%, rgba(255, 107, 53, 0.02) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 1;
+        animation: ambientGlow 15s ease-in-out infinite;
+    }
+
+    @keyframes ambientGlow {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+    }
 }
 
 /* Personnalisation de la scrollbar */
@@ -74,14 +101,15 @@ section{
     scroll-snap-align: center;
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden; /* Empêche tout scroll individuel */
 }
 
-/* Spécifique au portfolio uniquement */
+/* Styles spécifiques pour portfolio */
 .portfolio section {
     scroll-snap-align: start;
     height: 100vh;
-    padding-top: 70px; /* Réduit de 100px à 70px pour libérer 30px (~1cm) */
+    padding-top: 0;
+    overflow: hidden; /* Pas de scroll individuel */
 }
 
 /* Services - reset explicite */

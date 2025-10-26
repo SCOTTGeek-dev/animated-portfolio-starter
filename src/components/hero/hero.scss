@@ -23,12 +23,68 @@
 
 h2{
     font-size: clamp(20px, 3vw, 30px);
-    color: rebeccapurple;
+    color: #9b59b6;
     letter-spacing: clamp(5px, 1vw, 10px);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 10px rgba(155, 89, 182, 0.8),
+        0 0 20px rgba(155, 89, 182, 0.6),
+        0 0 30px rgba(155, 89, 182, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: glowPulse 3s ease-in-out infinite;
+
+    @keyframes glowPulse {
+        0%, 100% {
+            text-shadow: 
+                0 0 10px rgba(155, 89, 182, 0.8),
+                0 0 20px rgba(155, 89, 182, 0.6),
+                0 0 30px rgba(155, 89, 182, 0.4),
+                2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        50% {
+            text-shadow: 
+                0 0 15px rgba(155, 89, 182, 1),
+                0 0 30px rgba(155, 89, 182, 0.8),
+                0 0 45px rgba(155, 89, 182, 0.6),
+                2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+    }
 }
 
 h1{
     font-size: clamp(36px, 6vw, 60px);
+    background: linear-gradient(135deg, #ffffff 0%, #ff6b35 50%, #ffa500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+    position: relative;
+
+    @keyframes shimmer {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        z-index: -1;
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 165, 0, 0.3));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: blur(4px);
+    }
 }
 
 .buttons{
@@ -46,10 +102,38 @@ h1{
         font-weight: 300;
         font-size: clamp(14px, 1.5vw, 16px);
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, orange, #ff6b35);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
 
         &:hover {
-            background-color: orange;
+            background-color: transparent;
             border-color: orange;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4);
+
+            &::before {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        &:active {
+            transform: translateY(-1px);
         }
     }
 }
@@ -67,11 +151,27 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: float 6s ease-in-out infinite;
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
 
     img {
         max-width: 100%;
         height: auto;
         object-fit: contain;
+        filter: drop-shadow(0 0 30px rgba(255, 165, 0, 0.3));
+        transition: filter 0.3s ease;
+
+        &:hover {
+            filter: drop-shadow(0 0 50px rgba(255, 165, 0, 0.6));
+        }
     }
 }
 

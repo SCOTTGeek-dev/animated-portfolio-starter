@@ -1,5 +1,9 @@
 .navbar{
 height: 100px;
+position: relative;
+z-index: 999;
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+backdrop-filter: blur(5px);
 
 .wrapper{
     max-width: 1366px;
@@ -15,6 +19,21 @@ height: 100px;
 span{
     font-weight: bold;
     font-size: clamp(16px, 2vw, 20px);
+    background: linear-gradient(135deg, white, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: logoGlow 3s ease-in-out infinite;
+    cursor: default;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.8));
+    }
 }
 
 .social{
