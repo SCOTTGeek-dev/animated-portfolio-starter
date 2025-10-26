@@ -9,10 +9,12 @@ height: 100px;
     justify-content: space-between;
     background-color: transparent;
     height: 100%;
+    padding: 0 20px;
 }
 
-.span{
+span{
     font-weight: bold;
+    font-size: clamp(16px, 2vw, 20px);
 }
 
 .social{
@@ -30,8 +32,8 @@ height: 100px;
         }
 
         svg {
-            width: 24px;
-            height: 24px;
+            width: clamp(20px, 3vw, 24px);
+            height: clamp(20px, 3vw, 24px);
             fill: white;
             transition: all 0.3s ease;
         }
@@ -44,8 +46,8 @@ height: 100px;
 }
 
 img{
-    width: 24px;
-    height: 24px;
+    width: clamp(20px, 3vw, 24px);
+    height: clamp(20px, 3vw, 24px);
     object-fit: contain;
     filter: brightness(1) invert(1);
     opacity: 0.9;
@@ -53,6 +55,63 @@ img{
 
     &:hover {
         opacity: 1;
+    }
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+    height: 80px;
+
+    .wrapper {
+        padding: 0 15px;
+    }
+
+    span {
+        font-size: clamp(14px, 2.5vw, 18px);
+    }
+
+    .social {
+        gap: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    height: 70px;
+
+    .wrapper {
+        padding: 0 10px;
+    }
+
+    span {
+        font-size: 14px;
+    }
+
+    .social {
+        gap: 12px;
+
+        a svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+    height: 60px;
+
+    span {
+        font-size: 12px;
+    }
+
+    .social {
+        gap: 10px;
+
+        a svg {
+            width: 18px;
+            height: 18px;
+        }
     }
 }
 

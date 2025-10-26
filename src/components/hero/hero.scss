@@ -5,13 +5,12 @@
     position: relative;
 }
 
-
 .wrapper{
     max-width: 1366px;
     height: 100%;
     margin: auto;
+    padding: 0 20px;
 }
-
 
 .textContainer{
     width: 50%;
@@ -23,46 +22,186 @@
 }
 
 h2{
-    font-size: 30px;
+    font-size: clamp(20px, 3vw, 30px);
     color: rebeccapurple;
-    letter-spacing: 10px;
+    letter-spacing: clamp(5px, 1vw, 10px);
 }
 
 h1{
-    font-size: 60px;
+    font-size: clamp(36px, 6vw, 60px);
 }
 
 .buttons{
-button{
-    padding: 20px;
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: transparent;
-    color: white;
-    margin-right: 20px;
-    cursor: pointer;
-    font-weight: 300;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    button{
+        padding: clamp(15px, 2vw, 20px);
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        font-weight: 300;
+        font-size: clamp(14px, 1.5vw, 16px);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: orange;
+            border-color: orange;
+        }
+    }
 }
 
 img{
-    width:50px;
+    width: clamp(40px, 5vw, 50px);
 }
 
 .imageContainer{
-    height:100%;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
 .slidingTextContainer{
-    position:absolute;
-    font-size: 50vh;
+    position: absolute;
+    font-size: clamp(20vh, 50vh, 50vh);
     bottom: -120px;
     white-space: nowrap;
     color: #ffffff07;
     width: 50%;
     font-weight: bold;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .hero {
+        height: calc(100vh - 80px);
+    }
+
+    .wrapper {
+        padding: 0 15px;
+    }
+
+    .textContainer {
+        width: 60%;
+        gap: 30px;
+    }
+
+    .imageContainer {
+        width: 40%;
+        right: -50px;
+    }
+
+    .slidingTextContainer {
+        font-size: 40vh;
+        bottom: -100px;
+        width: 60%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        height: calc(100vh - 70px);
+    }
+
+    .wrapper {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .textContainer {
+        width: 100%;
+        gap: 20px;
+        text-align: center;
+        z-index: 2;
+    }
+
+    h2 {
+        letter-spacing: 3px;
+    }
+
+    .buttons {
+        justify-content: center;
+
+        button {
+            padding: 12px 20px;
+        }
+    }
+
+    .imageContainer {
+        width: 100%;
+        position: relative;
+        height: 50%;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .slidingTextContainer {
+        font-size: 30vh;
+        bottom: -80px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+    .hero {
+        height: calc(100vh - 60px);
+    }
+
+    .textContainer {
+        gap: 15px;
+    }
+
+    h2 {
+        letter-spacing: 2px;
+    }
+
+    .buttons button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .slidingTextContainer {
+        font-size: 20vh;
+        bottom: -60px;
+    }
+}
+
+/* Adaptation au zoom */
+@media (min-width: 1400px) {
+    .wrapper {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .wrapper {
+        max-width: 1600px;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
 }

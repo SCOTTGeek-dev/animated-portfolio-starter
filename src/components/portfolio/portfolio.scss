@@ -189,55 +189,203 @@
    }
 
    /* Responsive basique */
+   /* Tablette */
+   @media (max-width: 1024px) {
+      .progressBar {
+         padding: 12px 0;
+         
+         h1 { font-size: clamp(28px, 4vw, 32px); }
+         
+         .progressBarFill {
+            height: 8px;
+            margin: 0 15px;
+         }
+      }
+      
+      section {
+         padding-top: 0;
+      }
+      
+      .container .wrapper {
+         max-width: 800px;
+         gap: 25px;
+         padding: 20px;
+         
+         .textContainer {
+            max-width: 550px;
+            gap: 12px;
+            
+            h2 { font-size: clamp(28px, 4vw, 32px); }
+            p { font-size: clamp(14px, 2vw, 15px); }
+            
+            button {
+               width: 180px;
+               padding: 9px;
+               font-size: 15px;
+            }
+
+            .imageContainer {
+               width: 250px;
+               height: 250px;
+               margin: 35px auto 0 auto;
+            }
+         }
+      }
+   }
+
+   /* Mobile */
    @media (max-width: 768px) {
-      .progressBar h1 { font-size: 28px; }
+      .progressBar {
+         padding: 10px 0;
+         
+         h1 { font-size: clamp(24px, 6vw, 28px); }
+         
+         .progressBarFill {
+            height: 6px;
+            margin: 0 10px;
+         }
+      }
       
       section {
          padding-top: 0;
          align-items: center;
+         height: auto;
+         min-height: 100vh;
+      }
+      
+      .container {
+         padding: 20px 0;
+         
+         .wrapper {
+            max-width: 100%;
+            gap: 20px;
+            padding: 15px;
+            justify-content: center;
+            
+            .textContainer {
+               max-width: 90%;
+               gap: 12px;
+               
+               h2 { 
+                  font-size: clamp(24px, 7vw, 28px);
+                  margin-bottom: 10px;
+               }
+               
+               p { 
+                  font-size: clamp(13px, 4vw, 14px);
+                  line-height: 1.6;
+               }
+               
+               button {
+                  width: clamp(150px, 50vw, 180px);
+                  padding: 8px;
+                  font-size: clamp(13px, 4vw, 14px);
+               }
+
+               .imageContainer {
+                  width: clamp(180px, 50vw, 220px);
+                  height: clamp(180px, 50vw, 220px);
+                  margin: 25px auto 0 auto;
+                  
+                  &::before {
+                     top: -8px;
+                     left: -8px;
+                     right: -8px;
+                     bottom: -8px;
+                  }
+
+                  img {
+                     filter: drop-shadow(0 4px 8px rgba(255, 165, 0, 0.3));
+                     
+                     &[alt="Spring Boot"] {
+                        transform: scaleX(-1);
+                     }
+                  }
+                  
+                  &:hover img {
+                     filter: drop-shadow(0 8px 16px rgba(255, 165, 0, 0.5));
+                     transform: scaleX(-1);
+                     transition: transform 0.6s ease, filter 0.3s ease;
+                     
+                     &[alt="Spring Boot"] {
+                        transform: scaleX(1);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   /* Petit mobile */
+   @media (max-width: 480px) {
+      .progressBar {
+         padding: 8px 0;
+         
+         h1 { font-size: 20px; }
+         
+         .progressBarFill {
+            height: 5px;
+            margin: 0 8px;
+         }
       }
       
       .container .wrapper {
-         gap: 20px;
-         padding: 15px;
-         justify-content: center; /* Cohérent */
+         padding: 10px;
+         gap: 15px;
          
          .textContainer {
-            h2 { font-size: 28px; }
-            p { font-size: 14px; }
-            max-width: 90%; /* Utilise plus d'espace sur mobile */
+            gap: 10px;
+            
+            h2 { 
+               font-size: 22px;
+               margin-bottom: 8px;
+            }
+            p { 
+               font-size: 13px;
+               line-height: 1.5;
+            }
+            button {
+               width: 140px;
+               padding: 7px;
+               font-size: 13px;
+            }
 
             .imageContainer {
-               width: 220px; /* Proportionnel pour mobile */
-               height: 220px;
-               margin: 30px auto 0 auto;
+               width: 160px;
+               height: 160px;
+               margin: 20px auto 0 auto;
                
                &::before {
-                  top: -8px;
-                  left: -8px;
-                  right: -8px;
-                  bottom: -8px;
+                  top: -6px;
+                  left: -6px;
+                  right: -6px;
+                  bottom: -6px;
                }
+            }
+         }
+      }
+   }
 
-               img {
-                  filter: drop-shadow(0 4px 8px rgba(255, 165, 0, 0.3));
-                  
-                  /* Maintenir la correction sur mobile */
-                  &[alt="Spring Boot"] {
-                     transform: scaleX(-1);
-                  }
-               }
-               
-               /* Animation d'inversement au hover sur mobile */
-               &:hover img {
-                  filter: drop-shadow(0 8px 16px rgba(255, 165, 0, 0.5));
-                  transform: scaleX(-1);
-                  transition: transform 0.6s ease, filter 0.3s ease;
-                  
-                  &[alt="Spring Boot"] {
-                     transform: scaleX(1);
-                  }
-               }
+   /* Grands écrans */
+   @media (min-width: 1400px) {
+      .container .wrapper {
+         max-width: 1000px;
+         
+         .textContainer {
+            max-width: 700px;
+            
+            h2 { font-size: 40px; }
+            p { font-size: 18px; }
+            button {
+               width: 220px;
+               font-size: 17px;
+            }
+
+            .imageContainer {
+               width: 320px;
+               height: 320px;
+               margin: 50px auto 0 auto;
             }
          }
       }
