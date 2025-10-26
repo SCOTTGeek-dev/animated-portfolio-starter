@@ -31,6 +31,9 @@ const App = () => {
     <section id="Contact">
       <Contact />
     </section>
+    <footer className="footer">
+      <p>&copy; {new Date().getFullYear()} Youness Hamdaoui. All rights reserved.</p>
+    </footer>
   </div>;
 };
 

@@ -22,8 +22,19 @@ const Navbar = () => {
          initial={{opacity:0, scale:0.5}}
           animate={{opacity:1, scale:1}}
            transition={{duration:0.5}}
+           className="logoContainer"
            >
-            {t.name}
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 3H4a1 1 0 0 0-1 1v3M3 13v3a1 1 0 0 0 1 1h3M16 3h4a1 1 0 0 1 1 1v3M21 13v3a1 1 0 0 1-1 1h-3M8 8h8M8 12h8M8 16h8" 
+                stroke="url(#gradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <defs>
+                <linearGradient id="gradient" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="orange"/>
+                  <stop offset="50%" stopColor="#ff6b35"/>
+                  <stop offset="100%" stopColor="#ffa500"/>
+                </linearGradient>
+              </defs>
+            </svg>
             </motion.span>
         <div className="rightSection">
           <div className="social">
