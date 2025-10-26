@@ -2,6 +2,7 @@ import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "../../LanguageContext";
 
 
 const variants = {
@@ -20,7 +21,7 @@ const variants = {
 };
 
 const Contact = () => {
-
+const { t } = useLanguage();
 const ref = useRef();
 const formRef = useRef();
 
@@ -47,7 +48,7 @@ const sendEmail = (e) => {
             <motion.div 
             className="textContainer" 
             variants={variants}>
-                <motion.h1 variants={variants}>Let's collaborate !</motion.h1>
+                <motion.h1 variants={variants}>{t.contact.title}</motion.h1>
                 <motion.div className="item" variants={variants}>
                     <h2>Mail</h2>
                     <span>ham.youness@gmail.com</span>
@@ -77,10 +78,10 @@ const sendEmail = (e) => {
                 whileInView={{opacity:1}}
                 transition={{delay:2, duration:0.5}}
                 >
-                    <input type="text" required placeholder="Name" />
-                    <input type="email" required placeholder="Email" />
-                    <textarea rows={8} placeholder="Message"></textarea>
-                    <button>Submit</button>
+                    <input type="text" required placeholder={t.contact.form.name} />
+                    <input type="email" required placeholder={t.contact.form.email} />
+                    <textarea rows={8} placeholder={t.contact.form.message}></textarea>
+                    <button>{t.contact.form.submit}</button>
                 </motion.form>
             </div>
         </motion.div>

@@ -7,10 +7,12 @@ import Portfolio from "./components/portfolio/Portfolio.jsx";
 import Contact from "./components/contact/Contact.jsx";
 import Stars from "./components/stars/Stars.jsx";
 import Cursor from "./components/cursor/Cursor.jsx";
+import Sidebar from "./components/sidebar/Sidebar.jsx";
 
 const App = () => {
   return<div>
     <Cursor />
+    <Sidebar />
     <Stars />
     <section id="Homepage">
     <Navbar />

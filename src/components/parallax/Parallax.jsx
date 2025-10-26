@@ -1,9 +1,10 @@
 import { useRef } from "react";   
 import "./parallax.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useLanguage } from "../../LanguageContext";
 
 const Parallax = ({ type }) => {
-    
+    const { t } = useLanguage();
     const ref = useRef();
 
     const { scrollYProgress } = useScroll({
@@ -27,7 +28,7 @@ const Parallax = ({ type }) => {
              }}
              >
             <motion.h1 style={{ y: yText }}>
-                {type==="services" ? "What I Offer?" : "My Tech Stack"}
+                {type==="services" ? t.parallax.services : t.parallax.portfolio}
             </motion.h1>
             <motion.div className="mountains"></motion.div>
             <motion.div className="planets" style={{

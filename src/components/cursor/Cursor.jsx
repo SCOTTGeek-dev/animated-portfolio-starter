@@ -56,10 +56,9 @@ const Cursor = () => {
           scale: isPointer ? 1.5 : 1,
         }}
         transition={{
-          type: "spring",
-          stiffness: 1000,
-          damping: 35,
-          mass: 0.3,
+          type: "tween",
+          duration: 0,
+          ease: "linear",
         }}
       />
       
@@ -73,9 +72,9 @@ const Cursor = () => {
         }}
         transition={{
           type: "spring",
-          stiffness: 300,
-          damping: 25,
-          mass: 0.5,
+          stiffness: 500,
+          damping: 30,
+          mass: 0.2,
         }}
       />
     </>

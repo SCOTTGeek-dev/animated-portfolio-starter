@@ -1,6 +1,7 @@
 import "./services.scss";
 import { color, motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "../../LanguageContext";
 
 
 const variants = {
@@ -20,7 +21,7 @@ const variants = {
 };
 
 const Services = () => {
-
+    const { t } = useLanguage();
     const ref= useRef();
     const isInView= useInView(ref, { margin: "-100px" });
 
@@ -59,27 +60,18 @@ const Services = () => {
         </motion.div>
         <motion.div className="listContainer" variants={variants}>
         <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-            <h2>Cloud Architecture</h2>
-            <p>Design and implement scalable cloud infrastructures using Azure, GCP, and AWS. 
-            Expertise in microservices architecture, containerization with Docker and Kubernetes, 
-            and serverless computing for optimal performance and cost efficiency.
-            </p>
+            <h2>{t.services.items[0].title}</h2>
+            <p>{t.services.items[0].description}</p>
             <button>Learn More</button>
         </motion.div>
         <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-            <h2>Full-Stack Development</h2>
-            <p>Build robust web applications using Spring Boot for backend development and 
-            Angular/React for frontend. Proficient in Java enterprise applications, 
-            RESTful APIs, database design, and modern JavaScript frameworks.
-            </p>
+            <h2>{t.services.items[1].title}</h2>
+            <p>{t.services.items[1].description}</p>
             <button>View Projects</button>
         </motion.div>
         <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-            <h2>DevOps & CI/CD</h2>
-            <p>Implement automated deployment pipelines, infrastructure as code, 
-            monitoring and logging solutions. Experience with Jenkins, Azure DevOps, 
-            Terraform, and container orchestration for seamless development workflows.
-            </p>
+            <h2>{t.services.items[2].title}</h2>
+            <p>{t.services.items[2].description}</p>
             <button>Explore</button>
         </motion.div>
         </motion.div>

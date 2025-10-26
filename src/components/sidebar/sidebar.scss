@@ -7,13 +7,15 @@
     color: black;
    
     .bg{
-        z-index: 999;
+        z-index: 1001;
         position: fixed;
         top: 0;
         left: 0;
         bottom: 0;
         width: clamp(280px, 80vw, 400px);
-        background: white;
+        background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
 
         .links{
             position: absolute;
@@ -23,34 +25,72 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: clamp(15px, 3vh, 20px);
+            gap: clamp(20px, 4vh, 30px);
+            padding: 20px;
 
             a{
                 font-size: clamp(28px, 6vw, 40px);
-                transition: color 0.3s ease;
+                font-weight: 600;
+                color: #0c0c1d;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+                padding: 10px 20px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%) scaleX(0);
+                    width: 80%;
+                    height: 3px;
+                    background: linear-gradient(90deg, orange, #ff6b35);
+                    transition: transform 0.3s ease;
+                }
 
                 &:hover {
                     color: orange;
+                    transform: translateX(10px);
+                    
+                    &::after {
+                        transform: translateX(-50%) scaleX(1);
+                    }
                 }
             }
         }
     }
 
     button{
-        z-index: 999;
+        z-index: 1002;
         position: fixed;
         width: clamp(35px, 5vw, 40px);
         height: clamp(35px, 5vw, 40px);
         border-radius: 50%;
         top: 15px;
         left: 25px;
-        background-color: transparent;
-        border: none;
+        background-color: white;
+        border: 2px solid rgba(255, 165, 0, 0.3);
         cursor: pointer;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
         &:hover {
             transform: scale(1.1);
+            background-color: orange;
+            border-color: orange;
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+            
+            svg {
+                stroke: white;
+            }
+        }
+
+        svg {
+            transition: stroke 0.3s ease;
         }
 
         /* Ajustement pour mobile */

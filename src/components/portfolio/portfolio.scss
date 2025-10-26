@@ -69,6 +69,65 @@
                font-size: 36px;
                margin: 0;
                color: orange;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 15px;
+               flex-wrap: wrap;
+
+               .badge {
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  font-size: 12px;
+                  font-weight: 600;
+                  padding: 6px 12px;
+                  border-radius: 20px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                  animation: badgePulse 2s ease-in-out infinite;
+                  
+                  svg {
+                     animation: iconSpin 3s linear infinite;
+                  }
+               }
+
+               .language-badge {
+                  background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 107, 53, 0.2));
+                  border: 2px solid orange;
+                  color: orange;
+                  box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+               }
+
+               .cloud-badge {
+                  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 150, 255, 0.2));
+                  border: 2px solid #00d4ff;
+                  color: #00d4ff;
+                  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+               }
+
+               .framework-badge {
+                  background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(142, 68, 173, 0.2));
+                  border: 2px solid #9b59b6;
+                  color: #9b59b6;
+                  box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+               }
+
+               @keyframes badgePulse {
+                  0%, 100% {
+                     transform: scale(1);
+                     opacity: 1;
+                  }
+                  50% {
+                     transform: scale(1.05);
+                     opacity: 0.9;
+                  }
+               }
+
+               @keyframes iconSpin {
+                  0% { transform: rotate(0deg); }
+                  100% { transform: rotate(360deg); }
+               }
             }
 
             p{
@@ -133,6 +192,99 @@
                   background: linear-gradient(45deg, orange, rgba(255, 165, 0, 0.3), #ff6b35, transparent);
                }
 
+               /* Animations spéciales pour langages de programmation */
+               &.language::after {
+                  content: '';
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 120%;
+                  height: 120%;
+                  border: 3px solid orange;
+                  border-radius: 50%;
+                  opacity: 0;
+                  animation: languagePulse 2s ease-out infinite;
+               }
+
+               @keyframes languagePulse {
+                  0% {
+                     transform: translate(-50%, -50%) scale(0.8);
+                     opacity: 0.8;
+                  }
+                  100% {
+                     transform: translate(-50%, -50%) scale(1.5);
+                     opacity: 0;
+                  }
+               }
+
+               /* Animations spéciales pour cloud providers */
+               &.cloud::after {
+                  content: '';
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 140%;
+                  height: 140%;
+                  background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent);
+                  border-radius: 50%;
+                  opacity: 0;
+                  animation: cloudGlow 3s ease-in-out infinite;
+               }
+
+               @keyframes cloudGlow {
+                  0%, 100% {
+                     transform: translate(-50%, -50%) scale(1);
+                     opacity: 0;
+                  }
+                  50% {
+                     transform: translate(-50%, -50%) scale(1.3);
+                     opacity: 0.6;
+                  }
+               }
+
+               /* Animations spéciales pour frameworks */
+               &.framework::after {
+                  content: '';
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%) rotate(45deg);
+                  width: 130%;
+                  height: 130%;
+                  border: 2px solid #9b59b6;
+                  border-radius: 10%;
+                  opacity: 0;
+                  animation: frameworkSpin 3s linear infinite;
+               }
+
+               @keyframes frameworkSpin {
+                  0% {
+                     transform: translate(-50%, -50%) rotate(0deg) scale(1);
+                     opacity: 0.5;
+                  }
+                  50% {
+                     opacity: 0.8;
+                  }
+                  100% {
+                     transform: translate(-50%, -50%) rotate(360deg) scale(1);
+                     opacity: 0.5;
+                  }
+               }
+
+               &.language:hover::after {
+                  animation: languagePulse 1s ease-out infinite;
+               }
+
+               &.cloud:hover::after {
+                  animation: cloudGlow 1.5s ease-in-out infinite;
+               }
+
+               &.framework:hover::after {
+                  animation: frameworkSpin 1.5s linear infinite;
+               }
+
                img{
                   max-width: 100%;
                   max-height: 100%;
@@ -162,6 +314,26 @@
                   &[alt="Spring Boot"] {
                      transform: scaleX(1) scale(1.15) rotate(10deg); /* Remet Spring Boot à l'endroit au hover */
                   }
+               }
+
+               /* Filtre spécial pour les cloud providers */
+               &.cloud img {
+                  filter: drop-shadow(0 8px 16px rgba(0, 212, 255, 0.4));
+               }
+
+               &.cloud:hover img {
+                  filter: drop-shadow(0 12px 24px rgba(0, 212, 255, 0.6)) 
+                          drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+               }
+
+               /* Filtre spécial pour les frameworks */
+               &.framework img {
+                  filter: drop-shadow(0 8px 16px rgba(155, 89, 182, 0.4));
+               }
+
+               &.framework:hover img {
+                  filter: drop-shadow(0 12px 24px rgba(155, 89, 182, 0.6)) 
+                          drop-shadow(0 0 20px rgba(155, 89, 182, 0.4));
                }
             }
          }
