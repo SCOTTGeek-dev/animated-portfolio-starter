@@ -5,9 +5,11 @@ import Parallax from "./components/parallax/Parallax.jsx";
 import Services from "./components/services/Services.jsx";
 import Portfolio from "./components/portfolio/Portfolio.jsx";
 import Contact from "./components/contact/Contact.jsx";
+import Stars from "./components/stars/Stars.jsx";
 
 const App = () => {
   return<div>
+    <Stars />
     <section id="Homepage">
     <Navbar />
     <Hero />

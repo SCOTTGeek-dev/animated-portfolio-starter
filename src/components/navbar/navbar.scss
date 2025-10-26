@@ -18,11 +18,42 @@ height: 100px;
 .social{
     display: flex;
     gap: 20px;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: all 0.3s ease;
+        }
+
+        &:hover svg {
+            fill: orange;
+            filter: drop-shadow(0 0 8px rgba(255, 165, 0, 0.6));
+        }
+    }
 }
 
 img{
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(1) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
 }

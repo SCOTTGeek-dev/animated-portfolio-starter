@@ -75,7 +75,7 @@ const sendEmail = (e) => {
                 ref={formRef}
                 initial={{opacity:0}}
                 whileInView={{opacity:1}}
-                transition={{delay:4, duration:1}}
+                transition={{delay:2, duration:0.5}}
                 >
                     <input type="text" required placeholder="Name" />
                     <input type="email" required placeholder="Email" />

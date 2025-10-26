@@ -24,11 +24,59 @@
     }
     .formContainer{
         flex:1;
+        position: relative;
 
         .phoneSvg{
             stroke: orange;
             position: absolute;
             margin: auto;
+            animation: phoneCall 2s ease-in-out infinite;
+
+            @keyframes phoneCall {
+                0%, 100% {
+                    transform: scale(1) rotate(0deg);
+                }
+                25% {
+                    transform: scale(1.05) rotate(-5deg);
+                }
+                50% {
+                    transform: scale(1.1) rotate(5deg);
+                }
+                75% {
+                    transform: scale(1.05) rotate(-5deg);
+                }
+            }
+
+            /* Animation des ondes de chargement (appel) */
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                border: 2px solid orange;
+                border-radius: 50%;
+                opacity: 0;
+                animation: callWaves 2s ease-out infinite;
+            }
+
+            &::after {
+                animation-delay: 1s;
+            }
+
+            @keyframes callWaves {
+                0% {
+                    transform: translate(-50%, -50%) scale(0.8);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(1.8);
+                    opacity: 0;
+                }
+            }
         }
 
         form{
