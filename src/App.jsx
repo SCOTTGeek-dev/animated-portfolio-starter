@@ -30,10 +30,10 @@ const App = () => {
     <Portfolio />
     <section id="Contact">
       <Contact />
+      <footer className="footer">
+        <p>&copy; {new Date().getFullYear()} Youness Hamdaoui. All rights reserved.</p>
+      </footer>
     </section>
-    <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} Youness Hamdaoui. All rights reserved.</p>
-    </footer>
   </div>;
 };
 

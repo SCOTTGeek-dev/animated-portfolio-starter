@@ -145,6 +145,13 @@ section {
     padding-top: 0; /* Reset par défaut */
 }
 
+/* Section Contact avec flexbox pour inclure le footer */
+#Contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /* Reset des styles portfolio dans les autres sections */
 section:not(.portfolio section) {
    padding-top: 0 !important;
@@ -153,13 +160,14 @@ section:not(.portfolio section) {
 /* Footer */
 .footer {
     background: linear-gradient(180deg, #111132, #0c0c1d);
-    padding: clamp(30px, 4vh, 40px) clamp(20px, 5vw, 40px);
+    padding: clamp(20px, 3vh, 30px) clamp(20px, 5vw, 40px);
     text-align: center;
     border-top: 2px solid rgba(255, 165, 0, 0.3);
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     width: 100%;
     box-shadow: 0 -5px 20px rgba(255, 165, 0, 0.1);
+    margin-top: auto;
     
     p {
         color: rgba(255, 255, 255, 0.8);
