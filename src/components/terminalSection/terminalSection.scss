@@ -1,0 +1,109 @@
+.terminal-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 80px 0;
+    background: transparent;
+
+    .terminal-section-content {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 clamp(20px, 4vw, 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .terminal-section-title {
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 300;
+            color: white;
+            text-align: center;
+            margin: 0;
+            letter-spacing: 2px;
+
+            .title-accent {
+                color: orange;
+                font-weight: bold;
+                margin-right: 10px;
+                animation: blink 1.5s infinite;
+            }
+
+            @keyframes blink {
+                0%, 49% {
+                    opacity: 1;
+                }
+                50%, 100% {
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        .terminal-section-description {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #aaa;
+            text-align: center;
+            margin: 0 0 20px 0;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .terminal-wrapper {
+            width: 100%;
+            max-width: 1200px;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        padding: 60px 0;
+
+        .terminal-section-content {
+            gap: 25px;
+
+            .terminal-section-description {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        min-height: auto;
+        padding: 50px 0;
+
+        .terminal-section-content {
+            padding: 0 clamp(15px, 4vw, 30px);
+            gap: 20px;
+
+            .terminal-section-title {
+                letter-spacing: 1px;
+            }
+
+            .terminal-section-description {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 40px 0;
+
+        .terminal-section-content {
+            gap: 15px;
+
+            .terminal-section-title {
+                .title-accent {
+                    margin-right: 5px;
+                }
+            }
+
+            .terminal-section-description {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

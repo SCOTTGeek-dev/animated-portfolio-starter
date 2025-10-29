@@ -72,6 +72,7 @@ const Navbar = () => {
                 </linearGradient>
               </defs>
             </svg>
+            <span className="betaText">BETA</span>
             </motion.span>
         <div className="rightSection">
           <div className="social">

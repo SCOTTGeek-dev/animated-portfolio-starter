@@ -27,6 +27,7 @@ backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    gap: 10px;
     
     svg {
         filter: drop-shadow(0 0 8px rgba(255, 165, 0, 0.5));
@@ -37,6 +38,14 @@ backdrop-filter: blur(5px);
             filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.9));
             transform: scale(1.1) rotate(5deg);
         }
+    }
+    
+    .betaText {
+        color: orange;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 }
 
@@ -57,6 +66,30 @@ span{
     }
     50% {
         filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.8));
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateY(-2px) scale(1);
+        box-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.3),
+            0 4px 12px rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.5),
+            0 6px 16px rgba(0, 0, 0, 0.9);
     }
 }
 

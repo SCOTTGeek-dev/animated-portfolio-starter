@@ -8,6 +8,7 @@ import Contact from "./components/contact/Contact.jsx";
 import Stars from "./components/stars/Stars.jsx";
 import Cursor from "./components/cursor/Cursor.jsx";
 import Sidebar from "./components/sidebar/Sidebar.jsx";
+import TerminalSection from "./components/terminalSection/TerminalSection.jsx";
 
 const App = () => {
   return<div>
@@ -17,6 +18,9 @@ const App = () => {
     <section id="Homepage">
     <Navbar />
     <Hero />
+    </section>
+    <section id="Terminal">
+      <TerminalSection />
     </section>
     <section id="Services">
       <Parallax type="services" />

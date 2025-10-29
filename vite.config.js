@@ -13,7 +13,7 @@ export default defineConfig({
       '.serveo.net', // Permet tous les sous-domaines serveo.net
       '.ngrok.io', // Au cas où vous utiliseriez ngrok plus tard
       '.tunnel.me',
-      'effective-experimental-merit-composite.trycloudflare.com' // Autres services de tunnel
+      'reproductive-animals-front-ends.trycloudflare.com' // Autres services de tunnel
     ]
   }
 })
